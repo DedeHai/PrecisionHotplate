@@ -4,8 +4,8 @@
 //#include <TWILiquidCrystal.h>
 
 
-#include <PID_v1.h>
-#include <PID_AutoTune_v0.h>
+#include <PID_v1.h> //https://github.com/br3ttb/Arduino-PID-Library/
+#include <PID_AutoTune_v0.h> //https://github.com/br3ttb/Arduino-PID-AutoTune-Library
 #include <avr/pgmspace.h>
 #include "NTC_lookup.h"
 
@@ -16,14 +16,11 @@
 #define BUTTONPIN 4
 #define BUZZERPIN 5
 #define BUZZERGNDPIN 6
-#define NTCPRIMARY A0
-#define NTCSECONDARY A2
-#define NTCGNDPIN 15 //Analog pin A1
-#define NTCEXTERNAL A3 //for external NTC 100k sensor
+#define NTCPRIMARY A0 //Primary NTC, 100k glass bead NTC used in 3D printers, use a 2k pulldown to GND
+#define NTCSECONDARY A2 //Secondary (safety) NTC, 100k glass bead NTC used in 3D printers, use a 2k pulldown to GND
+#define NTCGNDPIN 15 //Analog pin A1 used as a GND for the NTC
+#define NTCEXTERNAL A3 //for external NTC 100k sensor (not used)
 #define POTIPIN A6 //0-5V potentiometer 
-
-
-
 
 
 //Define Variables we'll be connecting to
